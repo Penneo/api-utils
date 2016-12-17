@@ -3,6 +3,6 @@
 Do stuff with Penneo's public API
 
 ## Create Penneo users in bulk
-- [Node JS][js-user-creation]
+- [JS][js-user-creation]
 
 [js-user-creation]: https://github.com/ahmadnazir/penneo-utils/tree/master/js/user-creation
