@@ -16,7 +16,7 @@ has to be used to use the token. At this point in time, we don't have long
 living tokens so this script can only be used within 3 hrs of creation of an
 authentication token. 
 
-**todo** write more about how to generate an authentication token..
+Instructions on generating an authentication token can be found here: [Generate an authentication token using classic credentials][js-authentication]
 
 ## CSV file with User emails and names
 
@@ -27,3 +27,5 @@ The `csv-file` option takes a file that has `email` as the first column and
 john@doe.com,"John Doe"
 jane@acme.com,"Jane Doe"
 ```
+
+[js-authentication]: https://github.com/ahmadnazir/penneo-utils/tree/master/js/authentication
