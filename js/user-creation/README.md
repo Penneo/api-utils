@@ -5,7 +5,7 @@
 ```
 node main.js --token-file ~/.penneo-auth-token-sandbox \
      --customer-id CUSTOMER_ID \
-     --uri 'https://sandbox.penneo.com/' \
+     --uri 'https://sandbox.penneo.com' \
      --csv-file '/tmp/user-emails-names.csv';
 ```
 

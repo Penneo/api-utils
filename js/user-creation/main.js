@@ -21,11 +21,11 @@ var base        = args.uri,
 // Init Apis
 //
 var authApi = new Penneo({
-  url: base + "auth/api/v1/",
+  url: base + "/auth/api/v1/",
   auth: 'JWT'
 });
 var signApi = new Penneo({
-  url: base + "api/v1/",
+  url: base + "/api/v1/",
   auth: 'JWT'
 });
 var token = read.sync(tokenFile, 'utf8');
