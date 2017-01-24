@@ -14,4 +14,4 @@ Do stuff with Penneo's public API
 
 [js-user-creation]: https://github.com/Penneo/api-utils/tree/master/js/user-creation
 [js-authentication]: https://github.com/Penneo/api-utils/tree/master/js/authentication
-[download-signed-documents]: https://github.com/Penneo/api-utils/tree/master/js/download-documents
+[download-signed-documents]: https://github.com/Penneo/api-utils/tree/master/php/download-signed-documents
