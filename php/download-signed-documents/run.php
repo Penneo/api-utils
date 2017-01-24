@@ -28,9 +28,9 @@ if ($caseFileId) {
     $caseFiles = [$caseFile];
 } else {
     $caseFiles = CaseFile::findBy(
-        ['id' => $caseFileId, 'status' => 5], // criteria
-        null,                                 // order
-        10                                    // limit
+        ['status' => 5], // criteria
+        null,            // order
+        10               // limit
     );
 }
 
