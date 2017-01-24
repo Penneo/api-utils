@@ -8,18 +8,31 @@ require(__DIR__ . '/vendor/autoload.php');
 
 // Inputs
 //
-list($script, $endpoint, $username, $key, $debug) = $argv;
+$endpoint   = $argv[1];
+$username   = $argv[2];
+$key        = $argv[3];
+$caseFileId = @$argv[4];
+$debug      = @$argv[5];
+
 
 // Initialize the connection to the API
 //
 ApiConnector::enableDebug(!is_null($debug));
 ApiConnector::initialize($username, $key, $endpoint);
 
-$caseFiles = CaseFile::findBy(
-    ['status' => 5], // criteria
-    null,            // order
-    10               // limit
-);
+// Find Case Files
+//
+$caseFiles = [];
+if ($caseFileId) {
+    $caseFile = CaseFile::find($caseFileId);
+    $caseFiles = [$caseFile];
+} else {
+    $caseFiles = CaseFile::findBy(
+        ['id' => $caseFileId, 'status' => 5], // criteria
+        null,                                 // order
+        10                                    // limit
+    );
+}
 
 $count = 0;
 foreach ($caseFiles as $caseFile) {

@@ -8,13 +8,14 @@ composer install
 
 ## Run
 
-`run.php` contains a script that demonstrates how to download signed documents. You can run is as follows:
+`run.php` contains a script that demonstrates how to download signed documents for a case file. You can run is as follows:
 
 ```
 php run.php \
     'https://sandbox.penneo.com/api/v1/' \
     'key' \
     'secret' \
+    1234       # case file id
     ;
 ```
 
