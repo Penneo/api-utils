@@ -8,17 +8,44 @@ require(__DIR__ . '/vendor/autoload.php');
 
 // Inputs
 //
-$endpoint   = $argv[1];
-$username   = $argv[2];
-$key        = $argv[3];
-$caseFileId = @$argv[4];
-$debug      = @$argv[5];
 
+$opts = getopt(
+    "",
+    [
+        // Required
+        //
+        'endpoint:',
+        'key:',
+        'secret:',
+        // Optional
+        //
+        'folder-id::',
+        'case-file-id::',
+        'debug::',
+        'dry-run::',
+    ]
+);
+
+var_dump($opts);
+
+if (!$opts) {
+    echo "Usage: php {$argv[0]} --endpoint='xxx' --key='xxx' --secret='xxx'" . PHP_EOL;
+    exit(-1);
+}
+
+
+$endpoint   = $opts['endpoint'];
+$key        = $opts['key'];
+$secret     = $opts['secret'];
+$folderId   = @$opts['folder-id'];
+$caseFileId = @$opts['case-file-id'];
+$debug      = @$opts['debug'];
+$dryRun     = @$opts['dry-run'] === 'true';
 
 // Initialize the connection to the API
 //
 ApiConnector::enableDebug(!is_null($debug));
-ApiConnector::initialize($username, $key, $endpoint);
+ApiConnector::initialize($key, $secret, $endpoint);
 
 // Find Case Files
 //
@@ -27,8 +54,14 @@ if ($caseFileId) {
     $caseFile = CaseFile::find($caseFileId);
     $caseFiles = [$caseFile];
 } else {
+    $criteria = [
+        'status' => 5,
+    ];
+    if ($folderId) {
+        $criteria['folderIds'] = $folderId;
+    }
     $caseFiles = CaseFile::findBy(
-        ['status' => 5], // criteria
+        $criteria,
         null,            // order
         10               // limit
     );
@@ -48,23 +81,23 @@ foreach ($caseFiles as $caseFile) {
         $docId    = $document->getId();
         $docTitle = $document->getTitle();
 
+        $message = "$cfId : $cfTitle | $docId : $docTitle";
         if (file_exists($filename) && filesize($filename) > 0 ) {
-            echo "Skipping $docTitle [$docId] for $cfTitle [$cfId] \n";
+            echo "$message \t [skipped]\n";
             continue;
         }
 
-        echo "Downloading $docTitle [$docId] for $cfTitle [$cfId] \n";
+        echo "$message \n";
 
-        // Save file
-        $file = fopen($filename,'w');
-        fwrite($file,$document->getPdf());
-        fclose($file);
+        if (!$dryRun) {
+            // Save file
+            $file = fopen($filename,'w');
+            fwrite($file,$document->getPdf());
+            fclose($file);
+        }
 
         $count++;
     }
 }
 
 echo "Total files downloaded: $count \n";
-
-
-
