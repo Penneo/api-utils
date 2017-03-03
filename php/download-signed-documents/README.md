@@ -12,10 +12,10 @@ composer install
 
 ```
 php run.php \
-    'https://sandbox.penneo.com/api/v1/' \
-    'key' \
-    'secret' \
-    1234       # case file id
+    --endpoint='https://sandbox.penneo.com/api/v1/' \
+    --key='key' \
+    --secret='secret' \
+    --case-file-id=1234 \
     ;
 ```
 
