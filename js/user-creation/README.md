@@ -28,4 +28,4 @@ john@doe.com,"John Doe"
 jane@acme.com,"Jane Doe"
 ```
 
-[js-authentication]: https://github.com/ahmadnazir/penneo-utils/tree/master/js/authentication
+[js-authentication]: https://github.com/penneo/api-utils/tree/master/js/authentication
