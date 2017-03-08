@@ -1,0 +1,94 @@
+<?php
+
+/**
+ * This script shows how to generate a signing request link for a signer that
+ * signs one document
+ *
+ * Usage:
+ * php run.php "https://sandbox.penneo.com/api/v1/" USERNAME PASSWORD
+ */
+
+namespace Penneo\SDK;
+
+require(__DIR__ . '/vendor/autoload.php');
+
+// Inputs
+//
+$opts = getopt(
+    "",
+    [
+        // Required
+        //
+        'endpoint:',
+        'key:',
+        'secret:',
+        'files:',
+        // Optional
+        //
+        'debug::',
+    ]
+);
+
+$endpoint   = $opts['endpoint'];
+$key        = $opts['key'];
+$secret     = $opts['secret'];
+$files       = explode(',', $opts['files']);
+$debug      = @$opts['debug'];
+
+// Initialize the connection to the API
+//
+ApiConnector::initialize($key, $secret, $endpoint);
+
+if ($debug) {
+	ApiConnector::enableDebug($debug);
+	ApiConnector::throwExceptions($debug);
+}
+
+// Make sure all files exist
+foreach ($files as $file) {
+    if (!file_exists($file)) {
+        echo 'File does not exist. Exitting..' . PHP_EOL;
+        exit();
+    }
+}
+
+// create a new case file
+$cf = new CaseFile();
+$cf->setTitle('Sample Case File');
+CaseFile::persist($cf);
+
+// Create a new signer that can sign documents in the case file
+$signer = new Signer($cf);
+$signer->setName('John Doe');
+$signer->setOnBehalfOf('Acme Inc');
+Signer::persist($signer);
+
+// Documents for signing
+foreach ($files as $file) {
+    // Document
+    $doc = new Document($cf);
+    $doc->setTitle('Sample Document');
+    $doc->setPdfFile($file);
+    $doc->makeSignable();
+    Document::persist($doc);
+
+    // Create a new signature line on the document
+    $sigLine = new SignatureLine($doc);
+    $sigLine->setRole('Signer');
+    SignatureLine::persist($sigLine);
+
+    // Link the signer to the signature line
+    $sigLine->setSigner($signer);
+}
+
+
+
+// Get the signing request
+$request = $signer->getSigningRequest();
+
+// Activate
+$cf->send();
+
+// Generate the signing request link
+echo $request->getLink();
+echo PHP_EOL;
