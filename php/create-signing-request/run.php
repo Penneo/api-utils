@@ -5,7 +5,11 @@
  * signs one document
  *
  * Usage:
- * php run.php "https://sandbox.penneo.com/api/v1/" USERNAME PASSWORD
+ * php run.php \
+ *  --endpoint="https://sandbox.penneo.com/api/v1/" \
+ *  --key=key \
+ *  --secret=secret \
+ *  --files=document.pdf,contract.pdf
  */
 
 namespace Penneo\SDK;
