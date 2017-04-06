@@ -21,12 +21,11 @@ $opts = getopt(
         //
         'folder-id::',
         'case-file-id::',
+        'directory::',
         'debug::',
         'dry-run::',
     ]
 );
-
-var_dump($opts);
 
 if (!$opts) {
     echo "Usage: php {$argv[0]} --endpoint='xxx' --key='xxx' --secret='xxx'" . PHP_EOL;
@@ -39,6 +38,7 @@ $key        = $opts['key'];
 $secret     = $opts['secret'];
 $folderId   = @$opts['folder-id'];
 $caseFileId = @$opts['case-file-id'];
+$directory  = @$opts['directory'] ?: '.';
 $debug      = @$opts['debug'];
 $dryRun     = @$opts['dry-run'] === 'true';
 
@@ -74,7 +74,7 @@ foreach ($caseFiles as $caseFile) {
         if ($document->getStatus() !== 'completed') {
             break;
         }
-        $filename = "{$caseFile->getTitle()} - {$document->getTitle()}.pdf";
+        $filename = "$directory/{$caseFile->getTitle()} - {$document->getTitle()}.pdf";
 
         $cfId     = $caseFile->getId();
         $cfTitle  = $caseFile->getTitle();
