@@ -44,16 +44,15 @@ namespace Pennneo
             // Fetch all pages
             do {
                 // Check empty response
-                if (!response.Success) {
-                    Console.WriteLine("Error in fetching the page");
-                    return;
+                if (!response.Success || response.Objects.Count() == 0) {
+                    break;
                 }
 
                 // Print data in this page
                 Console.WriteLine("Page # " + response.Page);
                 foreach (CaseFile c in response.Objects)
                 {
-                    Console.WriteLine(" " + c.Id + " : " + c.Title);
+                    Console.WriteLine("- " + c.Id + " : " + c.Title);
                 }
             } while ((response = Query.GetNextPage<CaseFile>(response)) != null);
         }
