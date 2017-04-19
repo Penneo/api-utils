@@ -114,7 +114,7 @@ $count = 0;
 $lines = file($recipients, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 foreach ($lines as $line) {
 
-  list ($name, $email) = explode(',', $line);
+  list ($name, $email) = str_getcsv($line);
   $name = trim($name);
   $email = trim($email);
 
