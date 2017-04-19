@@ -1,0 +1,15 @@
+{
+    "name": "penneo/bulk-case-file-creation",
+    "description": "Script to create case files in bulk",
+    "type": "project",
+    "require": {
+        "penneo/penneo-sdk-php": "^1.5"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ahmad N. Raja",
+            "email": "ar@penneo.com"
+        }
+    ]
+}

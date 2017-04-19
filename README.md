@@ -17,9 +17,12 @@ Do stuff with Penneo's public API
 ## Create Signing Request Link
 - [PHP][create-signing-request]
 
+## Create Case Files in Bulk
+- [PHP][bulk-create-case-files]
 
 [js-user-creation]: https://github.com/Penneo/api-utils/tree/master/js/user-creation
 [js-authentication]: https://github.com/Penneo/api-utils/tree/master/js/authentication
 [download-signed-documents]: https://github.com/Penneo/api-utils/tree/master/php/download-signed-documents
 [filter-case-files]: https://github.com/Penneo/api-utils/tree/master/cs/filter-case-files
 [create-signing-request]: https://github.com/Penneo/api-utils/tree/master/php/create-signing-request
+[bulk-create-case-files]: https://github.com/Penneo/api-utils/tree/master/php/bulk-case-file-creation
