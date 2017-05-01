@@ -28,7 +28,7 @@ namespace Pennneo
         {
             var input = new QueryInput
             {
-                Page = 2,
+                Page = 1,
                 PerPage = 10
             };
             input.AddCriteria("createdAfter", new DateTime(2015,10,21));
@@ -62,10 +62,10 @@ namespace Pennneo
     {
         public void Log(string message, LogSeverity severity)
         {
-            if (severity >= LogSeverity.Error)
-            {
+            // if (severity >= LogSeverity.Error)
+            // {
                 Debug.WriteLine(severity + ": " + message);
-            }
+            // }
         }
     }
 }
