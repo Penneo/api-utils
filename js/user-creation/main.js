@@ -11,12 +11,12 @@ var args      = require('optimist')
       .default('rights', ['send', 'validation'])
       .argv;
 
-var base        = args.uri,
-    customerId  = args['customer-id'],
-    tokenFile   = args['token-file'],
-    csvFile     = args['csv-file'],
-    credentials = args.credentials,
-    rights      = args.rights;
+var base               = args.uri,
+    customerId         = args['customer-id'],
+    tokenFile          = args['token-file'],
+    csvFile            = args['csv-file'],
+    allowedCredentials = args['allowed-credentials'],
+    rights             = args.rights;
 
 // Init Apis
 //
@@ -32,60 +32,85 @@ var token = read.sync(tokenFile, 'utf8');
 authApi.setToken(token);
 signApi.setToken(token);
 
-// Process
-//
-var csvConents = read.sync(csvFile, 'utf8');
-babyparse.parse(csvConents).data.forEach(function(row) {
-  var email = row[0];
-  var name = row[1];
+// Helpers
 
-  if (!name && !email) {
-    return;
-  }
+function getUsers(csvFile) {
+  var csvConents = read.sync(csvFile, 'utf8');
+  return babyparse.
+    parse(csvConents).
+    data.
+    map(function(row) {
+      var email = row[0];
+      var name = row[1];
 
-  signApi.post('/customers/' + customerId + '/users', { // Create User
-    fullName: name,
-    email: email,
-    enabled: 1,
-    rights: rights
-  }).then(function(res) {
-    var userId = res.data.id;
-    console.log(
-      userId + ': User created: '
-        + name + ',' + email
-    );
-    return authApi.post('/credentials', {               // Create credentials
-      customerId: customerId,
-      userId: userId,
-      allowed: credentials
-    }).catch(requestError);
-
-  }).then(function(res) {
-    var userId = res.data.userId;
-    console.log(
-      userId + ': Set allowed credentials: '
-        + res.data.id
-    );
-
-    return authApi.post('/cred/requests', {             // Create setup requests
-      userId: userId,
-      type: 'initialize'
-    }).catch(requestError);
-
-  }).then(function(res) {
-    var userId = res.data.userId;
-    console.log(
-      userId + ': Created setup request: '
-        + res.data.id
-    );
-  }).catch(requestError);
-});
-
+      return {
+        fullName: name,
+        email: email,
+        enabled: 1,
+        rights: rights
+      };
+    }).
+    filter(function(user) {
+      return user.fullName && user.email;
+    });
+}
 
 function requestError(res) {
   if (res.error) {
     console.log(res.error);
   } else {
+    console.log('Unknown error: ');
     console.log(res);
   }
 }
+
+// Process
+
+var users = getUsers(csvFile);
+
+if (users.length > 40) {
+  console.log('Creating more than 40 users is not supported yet.');
+  process.exit(-1);
+}
+
+signApi.post('/customers/' + customerId + '/users', getUsers(csvFile)).then(function(res) { // Create users
+
+  // Log the users created
+  res.data.forEach(function(user) {
+    console.log(user.id + ': User created: ' + user.fullName+ ',' + user.email);
+  });
+
+  // Create allowed credentials
+  var credentials = res.data.map(function(user) {
+    return {
+      customerId: customerId,
+      userId: user.id,
+      allowed: allowedCredentials
+    };
+  });
+  return authApi.post('/credentials', credentials).catch(requestError);
+
+}).then(function(res) {
+
+  // Log the credentials created
+  res.data.forEach(function(allowed) {
+    console.log(allowed.userId + ': Set allowed credentials: ' + allowed.id);
+  });
+
+  // Create setup requests
+  var requests = res.data.map(function(allowed) {
+          return {
+            userId: allowed.userId,
+            type: 'initialize'
+          };
+        });
+  return authApi.post('/cred/requests', requests).catch(requestError);
+
+}).then(function(res) {
+
+  // Log the setup requests created
+  res.data.forEach(function(request) {
+    console.log(request.userId + ': Created setup request: ' + request.id);
+  });
+
+}).catch(requestError);
