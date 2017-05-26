@@ -24,8 +24,8 @@ Do stuff with Penneo's public API
 
 ## Signing Requests
 ### Create Signing Request Link ###
-- [PHP][create-signing-request]
-- [C#][create-signing-request]
+- [PHP][php-create-signing-request]
+- [C#][cs-create-signing-request]
 
 ## Users
 ### Create Penneo users in bulk
