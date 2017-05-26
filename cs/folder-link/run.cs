@@ -1,5 +1,3 @@
-// DOESN'T WORK : This functionality is not supported form the .net sdk
-
 using System;
 using Penneo;
 using System.Collections.Generic;
