@@ -1,15 +1,14 @@
 <?php
 
 /**
- * This script shows how to generate a signing request link for a signer that
- * signs one document
+ * This script shows how to create a case file using a template
  *
  * Usage:
  * php run.php \
  *  --endpoint="https://sandbox.penneo.com/api/v1/" \
  *  --key=key \
  *  --secret=secret \
- *  --files=document.pdf,contract.pdf
+ *  --file=document.pdf
  */
 
 namespace Penneo\SDK;
