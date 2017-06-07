@@ -48,6 +48,7 @@ if ($debug) {
 }
 
 // Make sure file exists
+//
 if (!file_exists($file)) {
     echo 'File does not exist. Exitting..' . PHP_EOL;
     exit();
@@ -67,6 +68,7 @@ CaseFile::persist($cf);
 
 
 // Get available document types
+//
 $documentTypes = $cf->getDocumentTypes();
 
 // Document for signing
@@ -104,6 +106,7 @@ if (count($errors) > 0) {
 }
 
 // Activate
+//
 $cf->send();
 
-echo 'Case file created: ' . $cf->getId() . PHP_EOL;
+echo 'Case file activated: ' . $cf->getId() . PHP_EOL;
