@@ -10,6 +10,8 @@ Do stuff with Penneo's public API
 - [C#][cs-filter-case-files]
 ### Create Case Files in Bulk
 - [PHP][php-bulk-create-case-files]
+### Create Case File with a Template
+- [PHP][php-case-file-template]
 
 ## Validations
 - [C#][cs-create-validation]
@@ -42,6 +44,7 @@ Do stuff with Penneo's public API
 [cs-filter-case-files]: https://github.com/Penneo/api-utils/tree/master/cs/filter-case-files
 [php-bulk-create-case-files]: https://github.com/Penneo/api-utils/tree/master/php/bulk-case-file-creation
 [php-create-signing-request]: https://github.com/Penneo/api-utils/tree/master/php/create-signing-request
+[php-case-file-template]: https://github.com/Penneo/api-utils/tree/master/php/case-file-template
 
 <!-- Validations -->
 [cs-create-validation]: https://github.com/Penneo/api-utils/tree/master/cs/create-validation
