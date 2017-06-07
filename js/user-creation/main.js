@@ -7,7 +7,7 @@ var args      = require('optimist')
       .demand('token-file')
       .demand('customer-id')
       .demand('csv-file')
-      .default('credentials', ['nemid', 'api'])
+      .default('allowed-credentials', ['classic', 'nemid', 'api'])
       .default('rights', ['send', 'validation'])
       .argv;
 
