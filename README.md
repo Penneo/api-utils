@@ -36,6 +36,8 @@ Do stuff with Penneo's public API
 ### Fetch Users for a Customer
 - [CS][cs-user-customer-users]
 
+## Logging
+- [PHP][php-enable-logging]
 
 <!-- Authentication -->
 [js-authentication]: https://github.com/Penneo/api-utils/tree/master/js/authentication
@@ -62,3 +64,5 @@ Do stuff with Penneo's public API
 [js-user-creation]: https://github.com/Penneo/api-utils/tree/master/js/user-creation
 [cs-user-customer-users]: https://github.com/Penneo/api-utils/tree/master/cs/customer-users
 
+<!-- Logging -->
+[php-enable-logging]: https://github.com/Penneo/api-utils/tree/master/php/enable-logging

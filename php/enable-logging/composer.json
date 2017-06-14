@@ -9,6 +9,6 @@
         }
     ],
     "require": {
-        "penneo/penneo-sdk-php": "1.6.0"
+        "penneo/penneo-sdk-php": "1.6"
     }
 }
