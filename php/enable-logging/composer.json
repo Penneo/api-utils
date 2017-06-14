@@ -1,0 +1,14 @@
+{
+    "name": "penneo/enable-logging",
+    "description": "Example for logging the request and response bodies when talking to the Penneo API",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Ahmad N. Raja",
+            "email": "ar@penneo.com"
+        }
+    ],
+    "require": {
+        "penneo/penneo-sdk-php": "1.6.0"
+    }
+}
