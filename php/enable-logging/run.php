@@ -16,7 +16,6 @@ namespace Penneo\SDK;
 
 require(__DIR__ . '/vendor/autoload.php');
 
-use Psr\Log\NullLogger;
 use Psr\Log\AbstractLogger;
 
 // Inputs

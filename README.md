@@ -3,7 +3,8 @@
 Do stuff with Penneo's public API
 
 ## Authentication
-- [JS][js-authentication]
+- [Documentation][doc-auth]
+- [Node JS][js-authentication]
 
 ## Case Files
 ### Filter case files
@@ -31,7 +32,7 @@ Do stuff with Penneo's public API
 
 ## Users
 ### Create Penneo users in bulk
-- [JS][js-user-creation]
+- [Node JS][js-user-creation]
 
 ### Fetch Users for a Customer
 - [CS][cs-user-customer-users]
@@ -66,3 +67,6 @@ Do stuff with Penneo's public API
 
 <!-- Logging -->
 [php-enable-logging]: https://github.com/Penneo/api-utils/tree/master/php/enable-logging
+
+<!-- Documenation -->
+[doc-auth]: https://github.com/Penneo/api-utils/tree/master/doc/auth.md
