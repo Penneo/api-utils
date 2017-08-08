@@ -3,7 +3,9 @@
 Do stuff with Penneo's public API
 
 ## Authentication
+### WSSE
 - [Documentation][doc-auth]
+### Classic (Username/Password)
 - [Node JS][js-authentication]
 
 ## Case Files
@@ -40,6 +42,9 @@ Do stuff with Penneo's public API
 ## Logging
 - [PHP][php-enable-logging]
 
+## Integration with Azure AD
+- [Azure AD][doc-azuread]
+
 <!-- Authentication -->
 [js-authentication]: https://github.com/Penneo/api-utils/tree/master/js/authentication
 
@@ -68,5 +73,6 @@ Do stuff with Penneo's public API
 <!-- Logging -->
 [php-enable-logging]: https://github.com/Penneo/api-utils/tree/master/php/enable-logging
 
-<!-- Documenation -->
-[doc-auth]: https://github.com/Penneo/api-utils/tree/master/doc/auth.md
+<!-- documenation -->
+[doc-auth]: https://github.com/penneo/api-utils/tree/master/doc/auth.md
+[doc-azuread]: https://github.com/penneo/api-utils/tree/master/doc/azuread/azuread.md
