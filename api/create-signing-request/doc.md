@@ -1,7 +1,7 @@
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
 **Table of Contents**
 
-- [Create a Signing Request](#create-a-signing-request)
+- [Example for creating a Signing Request using the REST API](#example-for-creating-a-signing-request-using-the-rest-api)
     - [Create case file](#create-case-file)
     - [Create document](#create-document)
     - [Create Signer](#create-signer)
@@ -13,7 +13,7 @@
 
 <!-- markdown-toc end -->
 
-# Create a Signing Request
+# Example for creating a Signing Request using the REST API
 
 Here is a list of calls that need to be made to the server. Please add the appropriate headers e.g:
 

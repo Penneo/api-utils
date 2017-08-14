@@ -53,7 +53,7 @@ Do stuff with Penneo's public API
 [cs-filter-case-files]: https://github.com/Penneo/api-utils/tree/master/cs/filter-case-files
 [php-bulk-create-case-files]: https://github.com/Penneo/api-utils/tree/master/php/bulk-case-file-creation
 [php-create-signing-request]: https://github.com/Penneo/api-utils/tree/master/php/create-signing-request
-[api-create-signing-request]: https://github.com/Penneo/api-utils/tree/master/api/create-signing-request
+[api-create-signing-request]: https://github.com/Penneo/api-utils/tree/master/api/create-signing-request/doc.md
 [php-case-file-template]: https://github.com/Penneo/api-utils/tree/master/php/case-file-template
 
 <!-- Validations -->
