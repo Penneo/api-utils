@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "300489a92b912aeb43d62b1f513c1af4",
+    "hash": "333616339e368a836283e1fe43c760e4",
     "packages": [
         {
             "name": "davedevelopment/guzzle-wsse-auth-plugin",
@@ -135,22 +135,23 @@
         },
         {
             "name": "penneo/penneo-sdk-php",
-            "version": "1.5.0",
+            "version": "v1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Penneo/sdk-php.git",
-                "reference": "e80072ee9b6ad396f21f994ea00802be0793c47a"
+                "reference": "820cf7ab62bce506b8ec75dc6b9d26e7ce61f013"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Penneo/sdk-php/zipball/e80072ee9b6ad396f21f994ea00802be0793c47a",
-                "reference": "e80072ee9b6ad396f21f994ea00802be0793c47a",
+                "url": "https://api.github.com/repos/Penneo/sdk-php/zipball/820cf7ab62bce506b8ec75dc6b9d26e7ce61f013",
+                "reference": "820cf7ab62bce506b8ec75dc6b9d26e7ce61f013",
                 "shasum": ""
             },
             "require": {
                 "davedevelopment/guzzle-wsse-auth-plugin": "1.*",
                 "guzzle/guzzle": "3.8.*",
-                "php": ">=5.3.0"
+                "php": ">=5.3.0",
+                "psr/log": "1.0"
             },
             "require-dev": {
                 "behat/behat": "^3.0",
@@ -167,7 +168,45 @@
             "notification-url": "https://packagist.org/downloads/",
             "description": "Penneo SDK for PHP",
             "homepage": "https://penneo.com",
-            "time": "2016-03-29 13:53:50"
+            "time": "2017-08-01 14:49:13"
+        },
+        {
+            "name": "psr/log",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Psr\\Log\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "time": "2012-12-21 11:40:51"
         },
         {
             "name": "symfony/event-dispatcher",

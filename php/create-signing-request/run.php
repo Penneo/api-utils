@@ -16,6 +16,19 @@ namespace Penneo\SDK;
 
 require(__DIR__ . '/vendor/autoload.php');
 
+use Psr\Log\AbstractLogger;
+
+// Create a custom logger
+
+// class MyLogger extends AbstractLogger
+// {
+//     public function log($level, $message, array $context = array())
+//     {
+//         $message = (string) $message;
+//         echo "$level : $message : " . print_r($context, true);
+//     }
+// }
+
 // Inputs
 //
 $opts = getopt(
@@ -42,6 +55,7 @@ $debug      = @$opts['debug'];
 // Initialize the connection to the API
 //
 ApiConnector::initialize($key, $secret, $endpoint);
+// ApiConnector::setLogger(new MyLogger());
 
 if ($debug) {
 	ApiConnector::enableDebug($debug);
@@ -89,6 +103,7 @@ foreach ($files as $file) {
 
 // Get the signing request
 $request = $signer->getSigningRequest();
+$request->setEnableInsecureSigning(true);
 
 // Activate
 $cf->send();

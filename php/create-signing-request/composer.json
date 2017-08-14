@@ -3,7 +3,7 @@
     "description": "Script to create a signing request for a document",
     "type": "project",
     "require": {
-        "penneo/penneo-sdk-php": "^1.5"
+        "penneo/penneo-sdk-php": "^1.7"
     },
     "license": "MIT",
     "authors": [
