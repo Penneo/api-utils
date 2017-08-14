@@ -4,7 +4,7 @@ Do stuff with Penneo's public API
 
 ## Authentication
 ### WSSE
-- [Documentation][doc-auth]
+- [Documentation][doc-auth-wsse]
 ### Classic (Username/Password)
 - [Node JS][js-authentication]
 
@@ -31,6 +31,7 @@ Do stuff with Penneo's public API
 ### Create Signing Request Link ###
 - [PHP][php-create-signing-request]
 - [C#][cs-create-signing-request]
+- [API][api-create-signing-request]
 
 ## Users
 ### Create Penneo users in bulk
@@ -52,6 +53,7 @@ Do stuff with Penneo's public API
 [cs-filter-case-files]: https://github.com/Penneo/api-utils/tree/master/cs/filter-case-files
 [php-bulk-create-case-files]: https://github.com/Penneo/api-utils/tree/master/php/bulk-case-file-creation
 [php-create-signing-request]: https://github.com/Penneo/api-utils/tree/master/php/create-signing-request
+[api-create-signing-request]: https://github.com/Penneo/api-utils/tree/master/api/create-signing-request
 [php-case-file-template]: https://github.com/Penneo/api-utils/tree/master/php/case-file-template
 
 <!-- Validations -->
@@ -74,5 +76,5 @@ Do stuff with Penneo's public API
 [php-enable-logging]: https://github.com/Penneo/api-utils/tree/master/php/enable-logging
 
 <!-- documenation -->
-[doc-auth]: https://github.com/penneo/api-utils/tree/master/doc/auth.md
+[doc-auth-wsse]: https://github.com/penneo/api-utils/tree/master/doc/auth.md
 [doc-azuread]: https://github.com/penneo/api-utils/tree/master/doc/azuread/azuread.md
