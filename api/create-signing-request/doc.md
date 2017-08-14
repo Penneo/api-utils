@@ -7,8 +7,6 @@
     - [Create Signer](#create-signer)
     - [Map the document and signer with Signature Lines](#map-the-document-and-signer-with-signature-lines)
     - [[Optional] Send the signing request using Penneo](#optional-send-the-signing-request-using-penneo)
-        - [Get the signing request](#get-the-signing-request)
-        - [Update the email details](#update-the-email-details)
     - [Activate the case file](#activate-the-case-file)
 
 <!-- markdown-toc end -->
@@ -85,14 +83,14 @@ LINK /documents/2001/signaturelines/4001/signers/3001
 
 ## [Optional] Send the signing request using Penneo
 
-### Get the signing request
+Get the signing request
 ```
 GET /casefiles/1001/signers/3001/signingrequests
 
 ```
 Signing request : 3001
 
-### Update the email details
+Update the email details:
 ```
 PUT /signingrequests/3001
 {
