@@ -9,7 +9,7 @@
     - [[Optional] Send the signing request using Penneo](#optional-send-the-signing-request-using-penneo)
         - [Get the signing request](#get-the-signing-request)
         - [Update the email details](#update-the-email-details)
-        - [Activate the case file](#activate-the-case-file)
+    - [Activate the case file](#activate-the-case-file)
 
 <!-- markdown-toc end -->
 
