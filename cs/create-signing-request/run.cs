@@ -71,10 +71,18 @@ namespace Penneo
                 return;
             }
 
-            // Optionally enable access control
+            // [Optional] Send emails through Penneo
+            //
+            // signingRequest.Email = "john@doe.com";
+            // signingRequest.EmailSubject = "Contract for signing";
+            // signingRequest.EmailText = "Dear john. Please sign the contract.";
+
+            // Enable access control if you have specified a Social security
+            // number / VAT Identification Number for the Signer
             //
             // signingRequest.AccessControl = true;
-            // signingRequest.Persist();
+
+            signingRequest.Persist();
 
             // Create the signing request link
             //
@@ -90,7 +98,7 @@ namespace Penneo
     {
         public void Log(string message, LogSeverity severity)
         {
-            Console.WriteLine(severity + ": " + message);
+            // Console.WriteLine(severity + ": " + message);
         }
     }
 }
