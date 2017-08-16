@@ -26,6 +26,7 @@ Do stuff with Penneo's public API
 ## Archiving
 ### Download signed documents ###
 - [PHP][php-download-signed-documents]
+- [C#][cs-download-signed-documents]
 
 ## Signing Requests
 ### Create Signing Request Link ###
@@ -38,7 +39,7 @@ Do stuff with Penneo's public API
 - [Node JS][js-user-creation]
 
 ### Fetch Users for a Customer
-- [CS][cs-user-customer-users]
+- [C#][cs-user-customer-users]
 
 ## Logging
 - [PHP][php-enable-logging]
@@ -64,6 +65,7 @@ Do stuff with Penneo's public API
 
 <!-- Archiving -->
 [php-download-signed-documents]: https://github.com/Penneo/api-utils/tree/master/php/download-signed-documents
+[cs-download-signed-documents]: https://github.com/Penneo/api-utils/tree/master/cs/download-signed-documents
 
 <!-- Signing requests -->
 [cs-create-signing-request]: https://github.com/Penneo/api-utils/tree/master/cs/create-signing-request

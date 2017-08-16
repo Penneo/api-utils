@@ -44,7 +44,9 @@ namespace Penneo
             foreach (Document document in documents)
             {
                 Console.WriteLine("- " + document.Id + " : " + document.Title + "(" + document.GetStatus() + ")");
-                File.WriteAllBytes("downloaded-" + document.Id + ".pdf", document.GetPdf());
+                if (document.GetStatus().Equals("completed")) {
+                    File.WriteAllBytes("downloaded-" + document.Id + ".pdf", document.GetPdf());
+                }
             }
         }
     }
