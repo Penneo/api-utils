@@ -32,11 +32,18 @@ namespace Penneo
             var cf = new CaseFile("Sample Case File");
             cf.Persist();
 
+            Console.WriteLine("Case file : " + cf.Id);
+
             // Document
             //
             var doc = new Document(cf, "Sample Document", file);
             doc.MakeSignable();
             doc.Persist();
+
+            if (doc.Id == null) {
+                Console.WriteLine("Unable to create a document");
+                return;
+            }
 
             // Signer
             //
@@ -49,7 +56,7 @@ namespace Penneo
 
             // Signature Line
             //
-            var sigLine = new SignatureLine(doc, "signer") {
+            var sigLine = new SignatureLine(doc, "dummy-signer-role") {
                 SignOrder = 0
             };
             sigLine.Persist();
@@ -87,6 +94,11 @@ namespace Penneo
             // Create the signing request link
             //
             var link = signingRequest.GetLink();
+
+            // Active the Case file (and send signing requests if email details
+            // are provided)
+            //
+            cf.Send();
 
             // Print the link
             //
