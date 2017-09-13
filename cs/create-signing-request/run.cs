@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 namespace Penneo
 {
-    public class FilterCaseFiles
+    public class CreateSigningRequestLink
     {
         public static void Main(string[] args)
         {
