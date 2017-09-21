@@ -1,34 +1,25 @@
 #!/usr/bin/python3
 
-import datetime
-import hashlib
 import base64
-import requests
-import json
-import sys
+import datetime
 import getopt
+import hashlib
+import json
+import random
+import requests
+import sys
 
-def generate_nonce(length=8):
-    import random
-    """Generate pseudorandom number."""
-    return ''.join([str(random.randint(0, 9)) for i in range(length)])
+def generate_nonce():
+    return base64.b64encode(bytes(str(random.randrange(10**19)), 'utf-8')).decode('utf-8')
 
 def generate_headers(key, secret):
-    """Generate wsse headers."""
-
     timestamp = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")
-
     nonce = generate_nonce()
-    hashedNonce = hashlib.sha512(bytes(nonce, 'utf-8')).hexdigest()
+    digest = '{}{}{}'.format(base64.b64decode(nonce).decode('utf-8'), timestamp, secret)
+    hashed_digest = hashlib.sha1(bytes(digest, 'utf-8')).digest()
+    encoded_hashed_digest = base64.b64encode(hashed_digest).decode('utf-8')
 
-    decodedNonce = base64.b64decode(hashedNonce)
-    digest = decodedNonce + timestamp.encode() + secret.encode();
-
-    digest = hashlib.sha1(digest).digest()
-    digest = base64.b64encode(digest)
-    digest = str(digest).strip("b'")
-
-    username_token = 'UsernameToken Username="{}", PasswordDigest="{}", Nonce="{}", Created="{}"'.format(key, digest, hashedNonce, timestamp)
+    username_token = 'UsernameToken Username="{}", PasswordDigest="{}", Nonce="{}", Created="{}"'.format(key, encoded_hashed_digest, nonce, timestamp)
 
     headers = {
         'Authorization': 'WSSE profile="UsernameToken"',
