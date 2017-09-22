@@ -104,6 +104,7 @@ foreach ($files as $file) {
 // Get the signing request
 $request = $signer->getSigningRequest();
 $request->setEnableInsecureSigning(true);
+SigningRequest::persist($request);
 
 // Activate
 $cf->send();

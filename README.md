@@ -5,9 +5,10 @@ Do stuff with Penneo's public API
 ## Authentication
 ### WSSE
 - [Documentation][doc-auth-wsse]
-- [Python][python-auth-wsse]
+- [Python][py-auth-wsse]
 ### Classic (Username/Password)
-- [Node JS][js-authentication]
+- [Node JS][js-auth-classic]
+- [Python][py-auth-classic]
 
 ## Case Files
 ### Filter case files
@@ -49,8 +50,9 @@ Do stuff with Penneo's public API
 - [Azure AD][doc-azuread]
 
 <!-- Authentication -->
-[js-authentication]: https://github.com/Penneo/api-utils/tree/master/js/authentication
-[python-auth-wsse]: https://github.com/Penneo/api-utils/tree/master/python/authentication
+[js-auth-classic]: https://github.com/Penneo/api-utils/tree/master/js/auth/classic
+[py-auth-wsse]: https://github.com/Penneo/api-utils/tree/master/py/auth/wsse
+[py-auth-classic]: https://github.com/Penneo/api-utils/tree/master/py/auth/classic
 
 <!-- Case files -->
 [cs-filter-case-files]: https://github.com/Penneo/api-utils/tree/master/cs/filter-case-files

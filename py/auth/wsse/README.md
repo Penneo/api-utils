@@ -1,4 +1,4 @@
-# Generate an Authentication token using wsse credentials
+# Authentication with wsse credentials
 
 ## Run
 
