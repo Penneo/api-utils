@@ -103,6 +103,12 @@ foreach ($files as $file) {
 
 // Get the signing request
 $request = $signer->getSigningRequest();
+// Optionally, set the the email information if you want to send the mail
+// through Penneo
+//
+// $request->setEmail($email);
+// $request->setEmailSubject($subject);
+// $request->setEmailText($template);
 $request->setEnableInsecureSigning(true);
 SigningRequest::persist($request);
 
