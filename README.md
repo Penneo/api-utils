@@ -46,6 +46,9 @@ Do stuff with Penneo's public API
 ## Logging
 - [PHP][php-enable-logging]
 
+## Email Templates
+- [C#][cs-email-templates]
+
 ## Integration with Azure AD
 - [Azure AD][doc-azuread]
 
@@ -80,6 +83,9 @@ Do stuff with Penneo's public API
 
 <!-- Logging -->
 [php-enable-logging]: https://github.com/Penneo/api-utils/tree/master/php/enable-logging
+
+<!-- Email templates -->
+[cs-email-templates]: https://github.com/Penneo/api-utils/tree/master/cs/email-templates
 
 <!-- documenation -->
 [doc-auth-wsse]: https://github.com/penneo/api-utils/tree/master/doc/auth.md
