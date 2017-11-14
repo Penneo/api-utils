@@ -6,6 +6,7 @@ Do stuff with Penneo's public API
 ### WSSE
 - [Documentation][doc-auth-wsse]
 - [Python][py-auth-wsse]
+- [C#][cs-auth-wsse]
 ### Classic (Username/Password)
 - [Node JS][js-auth-classic]
 - [Python][py-auth-classic]
@@ -56,6 +57,7 @@ Do stuff with Penneo's public API
 [js-auth-classic]: https://github.com/Penneo/api-utils/tree/master/js/auth/classic
 [py-auth-wsse]: https://github.com/Penneo/api-utils/tree/master/py/auth/wsse
 [py-auth-classic]: https://github.com/Penneo/api-utils/tree/master/py/auth/classic
+[cs-auth-wsse]: https://github.com/Penneo/api-utils/tree/master/cs/auth/wsse
 
 <!-- Case files -->
 [cs-filter-case-files]: https://github.com/Penneo/api-utils/tree/master/cs/filter-case-files
