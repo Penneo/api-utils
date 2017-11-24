@@ -3,7 +3,7 @@
     "description": "Script to create case files in bulk",
     "type": "project",
     "require": {
-        "penneo/penneo-sdk-php": "^1.5"
+        "penneo/penneo-sdk-php": "1.7"
     },
     "license": "MIT",
     "authors": [

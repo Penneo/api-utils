@@ -21,6 +21,20 @@ namespace Penneo\SDK;
 
 require(__DIR__ . '/vendor/autoload.php');
 
+use Psr\Log\AbstractLogger;
+
+// Create a custom logger
+
+class MyLogger extends AbstractLogger
+{
+    public function log($level, $message, array $context = array())
+    {
+        $message = (string) $message;
+        echo "$level : $message : " . print_r($context, true);
+    }
+}
+
+
 // Inputs
 //
 $opts = getopt(
@@ -33,6 +47,7 @@ $opts = getopt(
         'secret:',
         'files:',
         'recipients:',
+        'subject:',
         'template:',
         'title:',
         // Optional
@@ -50,12 +65,13 @@ $key        = $opts['key'];
 $secret     = $opts['secret'];
 $files      = explode(',', $opts['files']);
 $recipients = $opts['recipients'];
+$subject    = $opts['subject'];
 $template   = $opts['template'];
 $title      = $opts['title'];
 //optional
 $folderId       = @$opts['folder-id'];
-$expireInterval = @$opts['expire-interval'] ?: 30;
-$reminderInterval = @$opts['remind-interval'] ?: 2;
+$expireInterval = (int) @$opts['expire-interval'] ?: 30;
+$reminderInterval = (int) @$opts['remind-interval'] ?: 2;
 $dry            = isset($opts['dry']);
 $debug          = @$opts['debug'];
 
@@ -89,6 +105,7 @@ echo "Remind interval: $reminderInterval" . PHP_EOL;
 // Initialize the connection to the API
 //
 ApiConnector::initialize($key, $secret, $endpoint);
+// ApiConnector::setLogger(new MyLogger());
 
 if ($debug) {
 	ApiConnector::enableDebug($debug);
@@ -163,6 +180,7 @@ foreach ($lines as $line) {
   // Get the signing request
   $request = $signer->getSigningRequest();
   $request->setEmail($email);
+  $request->setEmailSubject($subject);
   $request->setEmailText($template);
   $request->setReminderInterval($reminderInterval);
   SigningRequest::persist($request);
