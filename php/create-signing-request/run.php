@@ -49,7 +49,7 @@ $opts = getopt(
 $endpoint   = $opts['endpoint'];
 $key        = $opts['key'];
 $secret     = $opts['secret'];
-$files       = explode(',', $opts['files']);
+$files      = explode(',', $opts['files']);
 $debug      = @$opts['debug'];
 
 // Initialize the connection to the API
@@ -82,21 +82,25 @@ $signer->setOnBehalfOf('Acme Inc');
 Signer::persist($signer);
 
 // Documents for signing
-foreach ($files as $file) {
+foreach ($files as $index => $file) {
     // Document
     $doc = new Document($cf);
     $doc->setTitle('Sample Document');
     $doc->setPdfFile($file);
-    $doc->makeSignable();
+    if ($index === 0) {
+        $doc->makeSignable();
+    }
     Document::persist($doc);
 
-    // Create a new signature line on the document
-    $sigLine = new SignatureLine($doc);
-    $sigLine->setRole('Signer');
-    SignatureLine::persist($sigLine);
+    if ($index === 0) {
+        // Create a new signature line on the document
+        $sigLine = new SignatureLine($doc);
+        $sigLine->setRole('Signer');
+        SignatureLine::persist($sigLine);
 
-    // Link the signer to the signature line
-    $sigLine->setSigner($signer);
+        // Link the signer to the signature line
+        $sigLine->setSigner($signer);
+    }
 }
 
 
