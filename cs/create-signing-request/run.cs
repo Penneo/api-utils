@@ -84,10 +84,17 @@ namespace Penneo
             // signingRequest.EmailSubject = "Contract for signing";
             // signingRequest.EmailText = "Dear john. Please sign the contract.";
 
+            // [Optional] Access Control
             // Enable access control if you have specified a Social security
             // number / VAT Identification Number for the Signer
             //
             // signingRequest.AccessControl = true;
+
+
+            // [Optional] Redirect after signing
+            //
+            // signingRequest.SuccessUrl = "https://app.penneo.com/login";
+            // signingRequest.FailUrl    = "enter url to go to after failure here";
 
             signingRequest.Persist();
 
