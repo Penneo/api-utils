@@ -81,8 +81,12 @@ namespace Penneo
             // [Optional] Send emails through Penneo
             //
             // signingRequest.Email = "john@doe.com";
+            //
             // signingRequest.EmailSubject = "Contract for signing";
             // signingRequest.EmailText = "Dear john. Please sign the contract.";
+            //
+            // signingRequest.CompletedEmailSubect = "Completed the case file: {{casefile.title}}";
+            // signingRequest.CompletedEmailText = "Dear john. Case file is completed: {{casefile.title}}.";
 
             // [Optional] Access Control
             // Enable access control if you have specified a Social security
