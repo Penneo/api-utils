@@ -30,6 +30,10 @@ namespace Penneo
             // Case file
             //
             var cf = new CaseFile("Sample Case File");
+            // cf.ExpireAt  = new DateTime(2020, 1, 1, 1, 1, 1);
+            // cf.SensitiveData = false;
+            // cf.DisableNotificationsOwner = false;
+            // cf.SignOnMeeting = false;
             cf.Persist();
 
             Console.WriteLine("Case file : " + cf.Id);
