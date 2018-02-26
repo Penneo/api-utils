@@ -98,6 +98,9 @@ namespace Penneo
             //
             // signingRequest.AccessControl = true;
 
+            // [Optional] Use touch signatures
+            //
+            // signingRequest.EnableInsecureSigning = true;
 
             // [Optional] Redirect after signing
             //
