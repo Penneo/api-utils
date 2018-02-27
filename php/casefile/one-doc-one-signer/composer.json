@@ -1,5 +1,5 @@
 {
-    "name": "penneo/create-signing-request",
+    "name": "penneo/signing-request",
     "description": "Script to create a signing request for a document",
     "type": "project",
     "require": {

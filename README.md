@@ -18,6 +18,10 @@ Do stuff with Penneo's public API
 - [PHP][php-bulk-create-case-files]
 ### Create Case File with a Template
 - [PHP][php-case-file-template]
+### Signing request link (One Document One Signer)
+- [PHP][php-casefile-one-doc-one-signer]
+- [C#][cs-casefile-one-doc-one-signer]
+- [API][api-casefile-one-doc-one-signer]
 
 ## Validations
 - [C#][cs-create-validation]
@@ -30,12 +34,6 @@ Do stuff with Penneo's public API
 ### Download signed documents ###
 - [PHP][php-download-signed-documents]
 - [C#][cs-download-signed-documents]
-
-## Signing Requests
-### Create Signing Request Link ###
-- [PHP][php-create-signing-request]
-- [C#][cs-create-signing-request]
-- [API][api-create-signing-request]
 
 ## Users
 ### Create Penneo users in bulk
@@ -62,9 +60,10 @@ Do stuff with Penneo's public API
 <!-- Case files -->
 [cs-filter-case-files]: https://github.com/Penneo/api-utils/tree/master/cs/filter-case-files
 [php-bulk-create-case-files]: https://github.com/Penneo/api-utils/tree/master/php/bulk-case-file-creation
-[php-create-signing-request]: https://github.com/Penneo/api-utils/tree/master/php/create-signing-request
-[api-create-signing-request]: https://github.com/Penneo/api-utils/tree/master/api/create-signing-request/doc.md
-[php-case-file-template]: https://github.com/Penneo/api-utils/tree/master/php/case-file-template
+[php-case-file-template]: https://github.com/Penneo/api-utils/tree/master/php/casefile/case-file-template
+[php-casefile-one-doc-one-signer]: https://github.com/Penneo/api-utils/tree/master/php/casefile/one-doc-one-signer
+[cs-casefile-one-doc-one-signer]: https://github.com/Penneo/api-utils/tree/master/cs/casefile/one-doc-one-signer
+[api-casefile-one-doc-one-signer]: https://github.com/Penneo/api-utils/tree/master/api/casefile/one-doc-one-signer/doc.md
 
 <!-- Validations -->
 [cs-create-validation]: https://github.com/Penneo/api-utils/tree/master/cs/create-validation
@@ -75,9 +74,6 @@ Do stuff with Penneo's public API
 <!-- Archiving -->
 [php-download-signed-documents]: https://github.com/Penneo/api-utils/tree/master/php/download-signed-documents
 [cs-download-signed-documents]: https://github.com/Penneo/api-utils/tree/master/cs/download-signed-documents
-
-<!-- Signing requests -->
-[cs-create-signing-request]: https://github.com/Penneo/api-utils/tree/master/cs/create-signing-request
 
 <!-- Users -->
 [js-user-creation]: https://github.com/Penneo/api-utils/tree/master/js/user-creation

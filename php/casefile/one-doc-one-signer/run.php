@@ -20,14 +20,14 @@ use Psr\Log\AbstractLogger;
 
 // Create a custom logger
 
-// class MyLogger extends AbstractLogger
-// {
-//     public function log($level, $message, array $context = array())
-//     {
-//         $message = (string) $message;
-//         echo "$level : $message : " . print_r($context, true);
-//     }
-// }
+class MyLogger extends AbstractLogger
+{
+    public function log($level, $message, array $context = array())
+    {
+        $message = (string) $message;
+        echo "$level : $message : " . print_r($context, true);
+    }
+}
 
 // Inputs
 //
@@ -55,7 +55,7 @@ $debug      = @$opts['debug'];
 // Initialize the connection to the API
 //
 ApiConnector::initialize($key, $secret, $endpoint);
-// ApiConnector::setLogger(new MyLogger());
+ApiConnector::setLogger(new MyLogger());
 
 if ($debug) {
 	ApiConnector::enableDebug($debug);
@@ -73,6 +73,7 @@ foreach ($files as $file) {
 // create a new case file
 $cf = new CaseFile();
 $cf->setTitle('Sample Case File');
+// $cf->setSensitiveData(true);
 CaseFile::persist($cf);
 
 // Create a new signer that can sign documents in the case file
