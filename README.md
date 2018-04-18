@@ -26,6 +26,9 @@ Do stuff with Penneo's public API
 #### One Document Two Signers
 - [C#][cs-casefile-one-doc-two-signers]
 
+## Case File Types
+- [C#][cs-casefiletype]
+
 ## Validations
 - [C#][cs-create-validation]
 
@@ -68,6 +71,9 @@ Do stuff with Penneo's public API
 [cs-casefile-one-doc-one-signer]: https://github.com/Penneo/api-utils/tree/master/cs/casefile/one-doc-one-signer
 [cs-casefile-one-doc-two-signers]: https://github.com/Penneo/api-utils/tree/master/cs/casefile/one-doc-two-signers
 [api-casefile-one-doc-one-signer]: https://github.com/Penneo/api-utils/tree/master/api/casefile/one-doc-one-signer/doc.md
+
+<!-- Case file types -->
+[cs-casefiletype]: https://github.com/Penneo/api-utils/tree/master/cs/casefiletype
 
 <!-- Validations -->
 [cs-create-validation]: https://github.com/Penneo/api-utils/tree/master/cs/create-validation
