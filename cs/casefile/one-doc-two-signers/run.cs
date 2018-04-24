@@ -34,6 +34,12 @@ namespace Penneo
 
             Console.WriteLine("Case file : " + cf.Id);
 
+            // Add to a folder
+            //
+            // var folders = Query.FindAll<Folder>();
+            // var folder = folders.First();
+            // folder.AddCaseFile(cf);
+
             // Document
             //
             var doc = new Document(cf, "Sample Document", file);
