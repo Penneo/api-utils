@@ -98,6 +98,16 @@ namespace Penneo
             // signingRequest.CompletedEmailSubect = "Completed the case file: {{casefile.title}}";
             // signingRequest.CompletedEmailText = "Dear john. Case file is completed: {{casefile.title}}.";
 
+            // [Optional] Email Message format
+            // Set it to "html" if you want to control how the email looks by
+            // using html in the email body instead of plain text. This applies
+            // to EmailText, ReminderEmailText, and CompletedEmailText. A
+            // prerequisite for this is that your company's account should be
+            // configured so that you can override the default email texts.
+            // Please get in touch with Penneo support if you have questions.
+            //
+            // signingRequest.EmailFormat = "html";
+
             // [Optional] Access Control
             // Enable access control if you have specified a Social security
             // number / VAT Identification Number for the Signer
