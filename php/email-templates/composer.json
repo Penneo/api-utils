@@ -1,0 +1,15 @@
+{
+    "name": "penneo/signing-request",
+    "description": "Script to create a signing request with custom email texts",
+    "type": "project",
+    "require": {
+        "penneo/penneo-sdk-php": "^1.10"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ahmad N. Raja",
+            "email": "ar@penneo.com"
+        }
+    ]
+}
