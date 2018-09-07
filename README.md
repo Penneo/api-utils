@@ -15,6 +15,7 @@ Do stuff with Penneo's public API
 ## Case Files
 ### Filter case files
 - [C#][cs-filter-case-files]
+- [PHP][php-filter-case-files]
 ### Create Case Files in Bulk
 - [PHP][php-bulk-create-case-files]
 ### Create Case File with a Template
@@ -67,6 +68,7 @@ Do stuff with Penneo's public API
 
 <!-- Case files -->
 [cs-filter-case-files]: cs/filter-case-files
+[php-filter-case-files]: php/filter-case-files
 [php-bulk-create-case-files]: php/bulk-case-file-creation
 [php-case-file-template]: php/casefile/case-file-template
 [php-casefile-one-doc-one-signer]: php/casefile/one-doc-one-signer
