@@ -9,6 +9,8 @@ node main.js --token-file ~/.penneo-auth-token-sandbox \
      --csv-file '/tmp/user-emails-names.csv';
 ```
 
+Optionally, you can add `--allowed-credentials bankid_se,classic` and `--rights send,validation`. Both are comma separated lists.
+
 ## Authentication
 
 The authentication token should be stored in a file and the `token-file` switch
