@@ -7,16 +7,16 @@ var args      = require('optimist')
       .demand('token-file')
       .demand('customer-id')
       .demand('csv-file')
-      .default('allowed-credentials', ['classic', 'nemid', 'api'])
-      .default('rights', ['send', 'validation'])
+      .default('allowed-credentials', 'classic,nemid,api')
+      .default('rights', 'send,validation')
       .argv;
 
 var base               = args.uri,
     customerId         = args['customer-id'],
     tokenFile          = args['token-file'],
     csvFile            = args['csv-file'],
-    allowedCredentials = args['allowed-credentials'],
-    rights             = args.rights;
+    allowedCredentials = args['allowed-credentials'].split(',').map(s => s.trim()),
+    rights             = args.rights.split(',').map(s => s.trim());
 
 // Init Apis
 //
