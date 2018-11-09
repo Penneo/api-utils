@@ -7,6 +7,7 @@ Do stuff with Penneo's public API
 - [Documentation][doc-auth-wsse]
 - [Python][py-auth-wsse]
 - [C#][cs-1-auth-wsse]
+- [Node JS][js-auth-wsse]
 ### Classic (Username/Password)
 - [Node JS][js-auth-classic]
 - [Python][py-auth-classic]
@@ -62,6 +63,7 @@ Do stuff with Penneo's public API
 
 <!-- Authentication -->
 [js-auth-classic]: js/auth/classic
+[js-auth-wsse]: js/auth/wsse
 [py-auth-wsse]: py/auth/wsse
 [py-auth-classic]: py/auth/classic
 [cs-1-auth-wsse]: cs/1.x/auth/wsse
