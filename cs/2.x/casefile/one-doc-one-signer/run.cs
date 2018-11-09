@@ -10,7 +10,7 @@ namespace Penneo
     {
         public static void Main(string[] args)
         {
-            if (args.Length != 4) {
+            if (args.Length < 4) {
                 Console.WriteLine("Parameters required: endpoint, key, secret, file");
                 Environment.Exit(-1);
             }
@@ -20,12 +20,13 @@ namespace Penneo
             string secret   = args[2];
             string file     = args[3];
 
-            PenneoConnector.Initialize(key, secret, endpoint);
-            PenneoConnector.SetLogger(new Logger());
-            run(file);
+            PenneoConnector c = new PenneoConnector(key, secret, endpoint);
+            c.Logger = new Logger();
+
+            run(c, file);
         }
 
-        public static void run(String file)
+        public static void run(PenneoConnector c, String file)
         {
             // Case file
             //
@@ -34,7 +35,7 @@ namespace Penneo
             // cf.SensitiveData = false;
             // cf.DisableNotificationsOwner = false;
             // cf.SignOnMeeting = false;
-            cf.Persist();
+            cf.Persist(c);
 
             Console.WriteLine("Case file : " + cf.Id);
 
@@ -48,7 +49,7 @@ namespace Penneo
             //
             var doc = new Document(cf, "Sample Document", file);
             doc.MakeSignable();
-            doc.Persist();
+            doc.Persist(c);
 
             if (doc.Id == null) {
                 Console.WriteLine("Unable to create a document");
@@ -61,7 +62,7 @@ namespace Penneo
             signer.OnBehalfOf = "Acme Corporation";
             // signer.SocialSecurityNumber = "0101501111";
             // signer.VATIdentificationNumber = 12345678;
-            signer.Persist();
+            signer.Persist(c);
 
 
             // Signature Line
@@ -69,7 +70,7 @@ namespace Penneo
             var sigLine = new SignatureLine(doc, "dummy-signer-role") {
                 SignOrder = 0
             };
-            sigLine.Persist();
+            sigLine.Persist(c);
 
             if (sigLine.Id == null) {
                 Console.WriteLine("Unable to create a signature line");
@@ -78,11 +79,11 @@ namespace Penneo
 
             // Map the signer to the document using the signature line
             //
-            sigLine.SetSigner(signer);
+            sigLine.SetSigner(c, signer);
 
             // Update the signing request
             //
-            var signingRequest = signer.GetSigningRequest();
+            var signingRequest = signer.GetSigningRequest(c);
             if (signingRequest.Id == null) {
                 Console.WriteLine("Unable to create the signing request");
                 return;
@@ -123,16 +124,16 @@ namespace Penneo
             // signingRequest.SuccessUrl = "https://app.penneo.com/login";
             // signingRequest.FailUrl    = "enter url to go to after failure here";
 
-            signingRequest.Persist();
+            signingRequest.Persist(c);
 
             // Create the signing request link
             //
-            var link = signingRequest.GetLink();
+            var link = signingRequest.GetLink(c);
 
             // Active the Case file (and send signing requests if email details
             // are provided)
             //
-            cf.Send();
+            // cf.Send();
 
             // Print the link
             //
@@ -144,7 +145,7 @@ namespace Penneo
     {
         public void Log(string message, LogSeverity severity)
         {
-            // Console.WriteLine(severity + ": " + message);
+            Console.WriteLine(severity + ": " + message);
         }
     }
 }
