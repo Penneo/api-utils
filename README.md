@@ -97,8 +97,8 @@ Do stuff with Penneo's public API
 [cs-1-user-customer-users]: cs/1.x/customer-users
 
 <!-- Logging -->
-[php-enable-logging]: php/enable-logging
-[cs-enable-logging]: cs/enable-logging
+[php-enable-logging]: nhp/enable-logging
+[cs-enable-logging]: cs/1.x/enable-logging
 
 <!-- Email templates -->
 [cs-1-email-templates]: cs/1.x/email-templates
