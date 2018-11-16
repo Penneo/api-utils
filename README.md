@@ -53,6 +53,7 @@ Do stuff with Penneo's public API
 
 ## Logging
 - [PHP][php-enable-logging]
+- [C#][cs-enable-logging]
 
 ## Email Templates
 - [C#][cs-1-email-templates]
@@ -97,6 +98,7 @@ Do stuff with Penneo's public API
 
 <!-- Logging -->
 [php-enable-logging]: php/enable-logging
+[cs-enable-logging]: cs/enable-logging
 
 <!-- Email templates -->
 [cs-1-email-templates]: cs/1.x/email-templates
