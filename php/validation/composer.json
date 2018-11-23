@@ -1,0 +1,15 @@
+{
+    "name": "penneo/validation",
+    "description": "Script to create a validation for someone",
+    "type": "project",
+    "require": {
+        "penneo/penneo-sdk-php": "^1.10.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ahmad N. Raja",
+            "email": "ar@penneo.com"
+        }
+    ]
+}

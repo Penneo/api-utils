@@ -34,6 +34,7 @@ Do stuff with Penneo's public API
 
 ## Validations
 - [C#][cs-1-create-validation]
+- [PHP][php-create-validation]
 
 ## Folders
 ### Linking folders
@@ -84,6 +85,7 @@ Do stuff with Penneo's public API
 
 <!-- Validations -->
 [cs-1-create-validation]: cs/1.x/create-validation
+[php-create-validation]: php/validation
 
 <!-- Folders -->
 [cs-1-folder-link]: cs/1.x/folder-link
