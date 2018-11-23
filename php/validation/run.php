@@ -1,8 +1,7 @@
 <?php
 
 /**
- * This script shows how to generate a signing request link for a signer that
- * signs one or more documents
+ * This script shows how to generate a validation request link
  *
  * Usage:
  * php run.php \
