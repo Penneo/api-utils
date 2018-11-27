@@ -3,7 +3,8 @@
     "description": "Script to download all signed documents",
     "type": "project",
     "require": {
-        "penneo/penneo-sdk-php": "^1.5"
+        "penneo/penneo-sdk-php": "^1.10",
+        "psr/log": "^1.1"
     },
     "license": "MIT",
     "authors": [

@@ -6,6 +6,8 @@ namespace Penneo\SDK;
 
 require(__DIR__ . '/vendor/autoload.php');
 
+use Psr\Log\AbstractLogger;
+
 // Inputs
 //
 
@@ -42,10 +44,23 @@ $directory  = @$opts['directory'] ?: '.';
 $debug      = @$opts['debug'];
 $dryRun     = @$opts['dry-run'] === 'true';
 
+
+// Create a custom logger
+
+class MyLogger extends AbstractLogger
+{
+    public function log($level, $message, array $context = array())
+    {
+        $message = (string) $message;
+        echo "$level : $message : " . print_r($context, true);
+    }
+}
+
 // Initialize the connection to the API
 //
 ApiConnector::enableDebug(!is_null($debug));
 ApiConnector::initialize($key, $secret, $endpoint);
+ApiConnector::setLogger(new MyLogger());
 
 // Find Case Files
 //
