@@ -63,6 +63,7 @@ Do stuff with Penneo's public API
 - [PHP][php-email-templates]
 
 ## Paging
+### Fetch case files in a folder
 - [C# 1.x][cs-1-paged-casefiles-in-folder]
 
 ## Integration with Azure AD

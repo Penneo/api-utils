@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 namespace Penneo
 {
-    public class CustomerUsers
+    public class CaseFilePagination
     {
         public static void Main(string[] args)
         {
