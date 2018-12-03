@@ -62,6 +62,9 @@ Do stuff with Penneo's public API
 - [C# 1.x][cs-1-email-templates]
 - [PHP][php-email-templates]
 
+## Paging
+- [C# 1.x][cs-1-paged-casefiles-in-folder]
+
 ## Integration with Azure AD
 - [Azure AD][doc-azuread]
 
@@ -109,6 +112,9 @@ Do stuff with Penneo's public API
 <!-- Email templates -->
 [cs-1-email-templates]: cs/1.x/email-templates
 [php-email-templates]: php/email-templates
+
+<!-- Paging -->
+[cs-1-paged-casefiles-in-folder]: cs/1.x/paging
 
 <!-- documenation -->
 [doc-auth-wsse]: doc/auth.md
