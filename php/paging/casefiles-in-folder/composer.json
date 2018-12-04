@@ -1,0 +1,16 @@
+{
+    "name": "penneo/paging",
+    "description": "Paginate case files that exist in a folder",
+    "type": "project",
+    "require": {
+        "penneo/penneo-sdk-php": "^1.11.1",
+        "psr/log": "^1.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ahmad N. Raja",
+            "email": "ar@penneo.com"
+        }
+    ]
+}

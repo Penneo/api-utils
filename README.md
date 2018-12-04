@@ -65,6 +65,7 @@ Do stuff with Penneo's public API
 ## Paging
 ### Fetch case files in a folder
 - [C# 1.x][cs-1-paged-casefiles-in-folder]
+- [PHP][php-paged-casefiles-in-folder]
 
 ## Integration with Azure AD
 - [Azure AD][doc-azuread]
@@ -116,6 +117,7 @@ Do stuff with Penneo's public API
 
 <!-- Paging -->
 [cs-1-paged-casefiles-in-folder]: cs/1.x/paging
+[php-paged-casefiles-in-folder]: php/paging/casefiles-in-folder
 
 <!-- documenation -->
 [doc-auth-wsse]: doc/auth.md
