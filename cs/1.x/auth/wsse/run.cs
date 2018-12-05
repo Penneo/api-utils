@@ -11,7 +11,7 @@ namespace Penneo
     {
         public static void Main(string[] args)
         {
-            if (args.Length < 4) {
+            if (args.Length < 3) {
                 Console.WriteLine("Parameters required: endpoint, key, secret");
                 Environment.Exit(-1);
             }
