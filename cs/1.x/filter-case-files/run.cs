@@ -10,7 +10,7 @@ namespace Penneo
     {
         public static void Main(string[] args)
         {
-            if (args.Length != 3) {
+            if (args.Length < 3) {
                 Console.WriteLine("Parameters required: endpoint, key, secret");
                 Environment.Exit(-1);
             }
@@ -33,6 +33,7 @@ namespace Penneo
             };
             input.AddCriteria("createdAfter", new DateTime(2015,10,21));
             // input.AddCriteria("folderIds", 1);
+            input.AddOrderBy("id", "DESC");
             var response = Query.FindBy<CaseFile>(input);
 
             // Check empty response
