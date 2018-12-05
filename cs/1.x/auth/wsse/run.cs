@@ -3,6 +3,7 @@ using Penneo;
 using System.Collections.Generic;
 // using System.Linq;
 using System.Diagnostics;
+using System.Net;
 
 namespace Penneo
 {
@@ -10,7 +11,7 @@ namespace Penneo
     {
         public static void Main(string[] args)
         {
-            if (args.Length != 3) {
+            if (args.Length < 4) {
                 Console.WriteLine("Parameters required: endpoint, key, secret");
                 Environment.Exit(-1);
             }
@@ -29,8 +30,17 @@ namespace Penneo
             RestConnector connector = new RestConnector();
             var response = connector.InvokeRequest("user");
 
-            Console.WriteLine(response.StatusCode);
-            Console.WriteLine(response.Content);
+            switch (response.StatusCode) {
+                case HttpStatusCode.OK:
+                    Console.WriteLine(response.Content);
+                    break;
+                case HttpStatusCode.Unauthorized:
+                    Console.WriteLine("Invalid credentials");
+                    break;
+                default:
+                    Console.WriteLine("Server returned with: " + response.StatusCode);
+                    break;
+            }
         }
     }
 
