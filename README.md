@@ -30,7 +30,7 @@ Do stuff with Penneo's public API
 - [API][api-casefile-one-doc-one-signer]
 #### One Document Two Signers
 - [C# 1.x][cs-1-casefile-one-doc-two-signers]
-#### Two Documents One Signer
+#### Multiple Documents One Signer
 - [PHP][php-casefile-multiple-doc-one-signer]
 
 ## Case File Types
