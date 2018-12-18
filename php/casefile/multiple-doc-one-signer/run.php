@@ -2,7 +2,7 @@
 
 /**
  * This script shows how to generate a signing request link for a signer that
- * signs one or more documents
+ * signs multiple documents
  *
  * Usage:
  * php run.php \
