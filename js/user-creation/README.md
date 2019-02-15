@@ -3,7 +3,7 @@
 ## Run
 
 ```
-node main.js --token-file ~/.penneo-auth-token-sandbox \
+node main.js \
      --customer-id CUSTOMER_ID \
      --uri 'https://sandbox.penneo.com' \
      --csv-file '/tmp/user-emails-names.csv';
@@ -13,10 +13,7 @@ Optionally, you can add `--allowed-credentials bankid_se,classic` and `--rights 
 
 ## Authentication
 
-The authentication token should be stored in a file and the `token-file` switch
-has to be used to use the token. At this point in time, we don't have long
-living tokens so this script can only be used within 3 hrs of creation of an
-authentication token. 
+You can either use api credentials or a JWT token (if you already have one). If the `jwt` is in the config file, then it will be used, otherwise the `key` and the `secret` will be used.
 
 Instructions on generating an authentication token can be found here: [Generate an authentication token using classic credentials][js-authentication]
 

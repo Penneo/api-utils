@@ -12,6 +12,9 @@
     "babyparse": "^0.4.6",
     "optimist": "^0.6.1",
     "penneo-js-sdk": "^0.1.12",
-    "read-file": "^0.2.0"
+    "read-file": "^0.2.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "wsse": "^2.4.0"
   }
 }
