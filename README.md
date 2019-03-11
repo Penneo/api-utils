@@ -33,7 +33,7 @@ Do stuff with Penneo's public API
 #### Multiple Documents One Signer
 - [PHP][php-casefile-multiple-doc-one-signer]
 
-## Case File Types
+## List Available Case File Types
 - [C# 1.x][cs-1-casefiletype]
 
 ## Validations
