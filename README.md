@@ -22,12 +22,13 @@ Do stuff with Penneo's public API
 - [PHP][php-bulk-create-case-files]
 ### Create Case File with a Template
 - [PHP][php-case-file-template]
+- [API][api-casefile-case-file-template]
 ### Signing request link
 #### One Document One Signer
 - [PHP][php-casefile-one-doc-one-signer]
 - [C# 1.x][cs-1-casefile-one-doc-one-signer]
 - [C# 2.x][cs-2-casefile-one-doc-one-signer]
-- [API][api-casefile-one-doc-one-signer]
+- [API][api-casefile-case-file-template]
 #### One Document Two Signers
 - [C# 1.x][cs-1-casefile-one-doc-two-signers]
 #### Multiple Documents One Signer
@@ -91,6 +92,7 @@ Do stuff with Penneo's public API
 [cs-2-casefile-one-doc-one-signer]: cs/2.x/casefile/one-doc-one-signer
 [cs-1-casefile-one-doc-two-signers]: cs/1.x/casefile/one-doc-two-signers
 [api-casefile-one-doc-one-signer]: api/casefile/one-doc-one-signer/doc.md
+[api-casefile-case-file-template]: api/casefile/casefiletype/doc.md
 
 <!-- Case file types -->
 [cs-1-casefiletype]: cs/1.x/casefiletype
