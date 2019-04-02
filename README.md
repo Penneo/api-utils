@@ -24,16 +24,19 @@ Do stuff with Penneo's public API
 - [PHP][php-case-file-template]
 - [API][api-casefile-case-file-template]
 ### Signing request link
-#### One Document One Signer
+#### One Document and One Signer
 - [PHP][php-casefile-one-doc-one-signer]
 - [C# 1.x][cs-1-casefile-one-doc-one-signer]
 - [C# 2.x][cs-2-casefile-one-doc-one-signer]
-- [API][api-casefile-case-file-template]
-#### One Document Two Signers
+- [API][api-casefile-one-doc-one-signer]
+#### One Document and Two Signers
 - [C# 1.x][cs-1-casefile-one-doc-two-signers]
 #### Multiple Documents One Signer
 - [PHP][php-casefile-multiple-doc-one-signer]
 
+## Registered Letters
+### One Document and One Recipient
+- [API][api-letter-one-doc-one-signer]
 ## List Available Case File Types
 - [C# 1.x][cs-1-casefiletype]
 
@@ -93,6 +96,9 @@ Do stuff with Penneo's public API
 [cs-1-casefile-one-doc-two-signers]: cs/1.x/casefile/one-doc-two-signers
 [api-casefile-one-doc-one-signer]: api/casefile/one-doc-one-signer/doc.md
 [api-casefile-case-file-template]: api/casefile/casefiletype/doc.md
+
+<!-- Registered Letters -->
+[api-letter-one-doc-one-signer]: api/registered-letter/one-doc-one-signer/doc.md
 
 <!-- Case file types -->
 [cs-1-casefiletype]: cs/1.x/casefiletype
