@@ -1,0 +1,16 @@
+{
+  "name": "penneo-form-data",
+  "version": "0.0.1",
+  "description": "Example for fetching the form data from the document",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ahmad N. Raja",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "wsse": "^2.4.0"
+  }
+}
