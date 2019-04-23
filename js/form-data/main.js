@@ -60,6 +60,30 @@ function getFormData(caseFileId) {
 
 }
 
-getFormData(81500).then(data => {
+
+let arg = process.argv;
+let caseFileId = arg[arg.length-1].trim();
+
+getFormData(caseFileId).then(data => {
     console.log(data);
+}).catch(data => {
+    console.log(`Response status: ${data.statusCode}`);
+    switch (data.statusCode) {
+    case 404:
+        console.log('Not found');
+        break;
+    case 403:
+        console.log('Access Denied');
+        break;
+    case 401:
+        console.log('Not authorized');
+        break;
+    case 400:
+        console.log('Bad request');
+        break;
+    default:
+        console.log('Unknown error');
+        break;
+    }
+    console.log(`Error: ${data.error}`);
 });
